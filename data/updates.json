@@ -1,12 +1,32 @@
 [
   {
-    "id": "fun-foundation-plan-2026-09-11-01",
-    "book_id": "fun-foundation-plan",
+    "id": "feynman-v1-c01-2026-09-11-01",
+    "book_id": "feynman-v1-c01",
     "date": "2026-09-11",
     "version": "v1.0",
     "type": "release",
-    "title": "نشر النسخة الأولى",
-    "description": "تم نشر النسخة الأولى من دليل مجموعة التأسيس المرح.",
-    "drive_url": "https://drive.google.com/file/d/15e6x6OJ8WvNp0KznDiuzoYg3Ox_zbvCE/view?usp=sharing"
+    "title": "نشر الفصل 1 للمراجعة",
+    "description": "إتاحة الفصل 1: الذرات في حركة ضمن الجزء الأول من المجلد الأول للمراجعة الجماعية.",
+    "drive_url": "https://drive.google.com/file/d/15UA2wVKKgGu3wVbF84E_M48Cw2BRzo0D/view?usp=sharing"
+  },
+  {
+    "id": "feynman-v1-c02-2026-09-11-01",
+    "book_id": "feynman-v1-c02",
+    "date": "2026-09-11",
+    "version": "v1.0",
+    "type": "release",
+    "title": "نشر الفصل 2 للمراجعة",
+    "description": "إتاحة الفصل 2: الفيزياء الأساسية ضمن الجزء الأول من المجلد الأول للمراجعة الجماعية.",
+    "drive_url": "https://drive.google.com/file/d/1VzWtr0qHC6x7mbbBhkC88dW65RNSAXNN/view?usp=sharing"
+  },
+  {
+    "id": "feynman-v1-c03-2026-09-11-01",
+    "book_id": "feynman-v1-c03",
+    "date": "2026-09-11",
+    "version": "v1.0",
+    "type": "release",
+    "title": "نشر الفصل 3 للمراجعة",
+    "description": "إتاحة الفصل 3: علاقة الفيزياء بالعلوم الأخرى ضمن الجزء الأول من المجلد الأول للمراجعة الجماعية.",
+    "drive_url": "https://drive.google.com/file/d/1vyDiVKGMdds6k1ZbOVkvk87JCJzCSa_2/view?usp=sharing"
   }
 ]
