@@ -49,6 +49,20 @@
     "description": "حدث إصدار أول توضيحي بلا ملف حقيقي، لذلك لا يظهر رابط تاريخي نشط.",
     "drive_url": ""
   },
+
+
+  {
+    "id": "my-first-book-2026-09-11-01",
+    "book_id": "my-first-book",
+    "date": "2026-09-11",
+    "version": "v1.0",
+    "type": "release",
+    "title": "نشر النسخة الأولى للمراجعة",
+    "description": "تم نشر النسخة الأولى من الكتاب للقراءة والمراجعة الجماعية.",
+    "drive_url": "https://drive.google.com/file/d/12779rCp5-pmALNwLGlw1la6adZ8KLsEE/view?usp=sharing"
+  },
+
+  
   {
     "id": "demo-computing-2026-09-01-01",
     "book_id": "demo-computing",
@@ -58,5 +72,6 @@
     "title": "بداية السجل التجريبي",
     "description": "حدث خيالي أقدم يوضح الاحتفاظ بتاريخ الإصدارات حتى بعد الانتقال إلى v2.0.",
     "drive_url": ""
-  }
+  },
+  
 ]
