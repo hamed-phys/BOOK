@@ -45,5 +45,22 @@
     "drive_url": "",
     "enabled": true,
     "demo": true
+  },
+  {
+  "id": "demo-physics",
+  "title_ar": "كتاب تجريبي في الفيزياء",
+  "title_en": "Physics Demo Book",
+  "author": "مؤلف تجريبي",
+  "category": "فيزياء",
+  "cover": "assets/covers/placeholder.svg",
+  "status": "review",
+  "version": "v1.0",
+  "progress": 35,
+  "last_updated": "2026-09-11",
+  "description": "بيانات تجريبية لتوضيح طريقة عرض كتاب ومراجعته.",
+  "drive_url": "https://drive.google.com/file/d/12779rCp5-pmALNwLGlw1la6adZ8KLsEE/view?usp=sharing",
+  "enabled": true,
+  "demo": true
   }
+  
 ]
