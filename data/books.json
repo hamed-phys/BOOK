@@ -47,6 +47,22 @@
     "demo": true
   },
   {
+  "id": "my-first-book",
+  "title_ar": "اسم الكتاب بالعربية",
+  "title_en": "Book Title",
+  "author": "اسم المؤلف",
+  "category": "فيزياء",
+  "cover": "assets/covers/placeholder.svg",
+  "status": "review",
+  "version": "v1.0",
+  "progress": 0,
+  "last_updated": "2026-09-11",
+  "description": "هذا الكتاب متاح حاليًا للقراءة والمراجعة الجماعية.",
+  "drive_url": "https://drive.google.com/file/d/12779rCp5-pmALNwLGlw1la6adZ8KLsEE/view?usp=sharing",
+  "enabled": true,
+  "demo": false
+  },
+  {
   "id": "demo-physics",
   "title_ar": "كتاب تجريبي في الفيزياء",
   "title_en": "Physics Demo Book",
