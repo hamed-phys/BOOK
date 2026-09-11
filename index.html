@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>مشروع القراءة والمراجعة الجماعية</title>
+  <meta name="description" content="منصة عربية ثابتة للقراءة الجماعية ومراجعة الكتب وربطها بملفات PDF خارجية.">
+  <meta property="og:title" content="مشروع القراءة والمراجعة الجماعية">
+  <meta property="og:description" content="اختر كتابًا، واقرأ النسخة الحالية، وشارك بملاحظاتك وتصحيحاتك.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">تجاوز إلى المحتوى الرئيسي</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" data-site-path="index.html" href="index.html" aria-label="الصفحة الرئيسية">
+        <img src="assets/favicon.svg" alt="" width="40" height="40">
+        <span data-site-title>مشروع القراءة والمراجعة الجماعية</span>
+      </a>
+      <nav class="main-nav" aria-label="التنقل الرئيسي">
+        <a data-site-path="index.html" href="index.html">الرئيسية</a>
+        <a data-site-path="index.html#books" href="#books">الكتب</a>
+        <a data-site-path="index.html#updates" href="#updates">آخر التحديثات</a>
+        <a data-site-path="index.html#participate" href="#participate">طريقة المشاركة</a>
+        <a data-site-path="index.html#about" href="#about">عن المشروع</a>
+        <a data-github-link href="#" target="_blank" rel="noopener noreferrer" hidden aria-label="مستودع GitHub — يفتح في علامة تبويب جديدة">GitHub</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <p class="eyebrow">قراءة جماعية · مراجعة موثقة · سجل إصدارات</p>
+          <h1 data-site-title>مشروع القراءة والمراجعة الجماعية</h1>
+          <p class="hero-copy" data-site-intro>اختر كتابًا، واقرأ النسخة الحالية، وشارك بملاحظاتك وتصحيحاتك.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#books">استعرض الكتب</a>
+            <a class="button button-secondary" href="#updates">آخر التحديثات</a>
+          </div>
+        </div>
+        <aside class="hero-note" aria-label="كيف يعمل الموقع">
+          <strong>كيف يعمل؟</strong>
+          <p>الموقع يعرض الكتالوج والحالة والإصدارات. التعليقات نفسها تكتب داخل ملف المراجعة على Google Drive.</p>
+          <p class="microcopy">لا توجد حسابات مستخدمين أو مزامنة تلقائية مع تعليقات Drive.</p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section" id="books" aria-labelledby="books-title">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">الكتالوج</p>
+          <h2 id="books-title">الكتب المتاحة</h2>
+          <p>ابحث في العنوان أو المؤلف أو التخصص، ثم استخدم المرشحات للوصول بسرعة إلى ما تريد.</p>
+        </div>
+
+        <form class="filters" role="search" onsubmit="return false">
+          <label class="field field-wide">
+            <span>بحث</span>
+            <input id="search" type="search" autocomplete="off" placeholder="مثال: فيزياء أو Physics أو اسم المؤلف">
+          </label>
+          <label class="field">
+            <span>التخصص</span>
+            <select id="category-filter">
+              <option value="all">الكل</option>
+            </select>
+          </label>
+          <label class="field">
+            <span>الحالة</span>
+            <select id="status-filter">
+              <option value="all">الكل</option>
+            </select>
+          </label>
+          <label class="field">
+            <span>الترتيب</span>
+            <select id="sort">
+              <option value="latest">الأحدث تحديثًا</option>
+              <option value="name">اسم الكتاب</option>
+              <option value="progress">نسبة الإنجاز</option>
+            </select>
+          </label>
+          <button id="reset-filters" class="button button-secondary filter-reset" type="button">إعادة الضبط</button>
+        </form>
+
+        <div class="results-toolbar">
+          <span id="result-count" aria-live="polite">جاري التحميل…</span>
+          <a class="text-link" data-site-path="tools/update-helper.html" href="tools/update-helper.html">أداة الصيانة البسيطة</a>
+        </div>
+        <div id="data-warning" class="warning-box" hidden></div>
+        <div id="catalog-state" aria-live="polite"><p class="state-message">جاري تحميل الكتب…</p></div>
+        <div id="catalog-grid" class="book-grid"></div>
+      </div>
+    </section>
+
+    <section class="section section-alt" id="updates" aria-labelledby="updates-title">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">المستجدات</p>
+          <h2 id="updates-title">آخر التحديثات</h2>
+          <p>أحدث 6 أحداث صالحة للكتب المعروضة حاليًا، مشتقة مباشرة من سجل التحديثات.</p>
+        </div>
+        <div id="updates-state" aria-live="polite"><p class="state-message">جاري تحميل التحديثات…</p></div>
+        <div id="recent-updates" class="updates-grid"></div>
+      </div>
+    </section>
+
+    <section class="section" id="participate" aria-labelledby="participate-title">
+      <div class="container narrow">
+        <div class="section-heading">
+          <p class="eyebrow">المشاركة</p>
+          <h2 id="participate-title">كيف تكتب ملاحظة مفيدة؟</h2>
+        </div>
+        <ol class="steps-list">
+          <li>اختر كتابًا وافتح زر <strong>اقرأ وشارك في المراجعة</strong>.</li>
+          <li>داخل Google Drive حدّد النص أو المنطقة التي تحتاج تعليقًا عندما تسمح صلاحيات الملف بذلك.</li>
+          <li>اكتب التصحيح المقترح بوضوح، واذكر إصدار PDF مثل <bdi dir="ltr">v1.2</bdi>.</li>
+          <li>اذكر رقم صفحة PDF، ورقم الصفحة المطبوعة إذا كان مختلفًا، ورقم القسم أو المعادلة عند الحاجة.</li>
+          <li>اجعل الملاحظة محددة: المشكلة، والاقتراح، وسبب التعديل إن كان مفيدًا.</li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section section-alt" id="about" aria-labelledby="about-title">
+      <div class="container narrow">
+        <div class="section-heading">
+          <p class="eyebrow">عن المشروع</p>
+          <h2 id="about-title">مكتبة مراجعة قابلة للتوسع</h2>
+        </div>
+        <p class="lead" data-site-about>مساحة للقراءة الجماعية ومراجعة الكتب في مختلف التخصصات.</p>
+        <p>يمكن إضافة أي تخصص جديد من JSON فقط؛ لا تحتاج إلى تعديل HTML أو JavaScript لإضافة فئة جديدة.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p><span data-site-title>مشروع القراءة والمراجعة الجماعية</span> — موقع ثابت يعمل على GitHub Pages.</p>
+      <a class="text-link" data-site-path="README.md" href="README.md">دليل الإدارة</a>
+    </div>
+  </footer>
+  <div id="live-region" class="sr-only" aria-live="polite"></div>
+  <noscript><div class="noscript">هذا الموقع يحتاج JavaScript لتحميل ملفات JSON وعرض الكتالوج. فعّل JavaScript أو راجع ملفات data مباشرة.</div></noscript>
+  <script type="module" src="assets/js/app.js"></script>
+</body>
+</html>
