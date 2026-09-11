@@ -1,77 +1,12 @@
 [
   {
-    "id": "demo-physics-2026-09-11-01",
-    "book_id": "demo-physics",
-    "date": "2026-09-11",
-    "version": "v1.2",
-    "type": "release",
-    "title": "نشر إصدار تجريبي محدث",
-    "description": "حدث توضيحي فقط يبين كيف يمكن أن يكون تاريخ آخر تحديث أحدث من last_updated في سجل الكتاب.",
-    "drive_url": ""
-  },
-  {
-    "id": "demo-electronics-2026-09-10-01",
-    "book_id": "demo-electronics",
-    "date": "2026-09-10",
-    "version": "v1.1",
-    "type": "progress",
-    "title": "إضافة ملاحظات تقدم تجريبية",
-    "description": "مثال لتحديث تاريخي لا يغير حقول الإصدار أو الحالة الحالية المخزنة في books.json.",
-    "drive_url": ""
-  },
-  {
-    "id": "demo-computing-2026-09-09-01",
-    "book_id": "demo-computing",
-    "date": "2026-09-09",
-    "version": "v2.0",
-    "type": "correction",
-    "title": "مراجعة صياغات تجريبية",
-    "description": "مثال خيالي لتسجيل مجموعة تصحيحات مرتبطة بالإصدار الحالي.",
-    "drive_url": ""
-  },
-  {
-    "id": "demo-physics-2026-09-05-01",
-    "book_id": "demo-physics",
-    "date": "2026-09-05",
-    "version": "v1.1",
-    "type": "correction",
-    "title": "تصحيح تجريبي سابق",
-    "description": "مثال لحدث أقدم يبقى في السجل ولا يستطيع استبدال الإصدار الحالي للكتاب.",
-    "drive_url": ""
-  },
-  {
-    "id": "demo-electronics-2026-09-03-01",
-    "book_id": "demo-electronics",
-    "date": "2026-09-03",
-    "version": "v1.0",
-    "type": "release",
-    "title": "إصدار تجريبي أول",
-    "description": "حدث إصدار أول توضيحي بلا ملف حقيقي، لذلك لا يظهر رابط تاريخي نشط.",
-    "drive_url": ""
-  },
-
-
-  {
-    "id": "my-first-book-2026-09-11-01",
-    "book_id": "my-first-book",
+    "id": "fun-foundation-plan-2026-09-11-01",
+    "book_id": "fun-foundation-plan",
     "date": "2026-09-11",
     "version": "v1.0",
     "type": "release",
-    "title": "نشر النسخة الأولى للمراجعة",
-    "description": "تم نشر النسخة الأولى من الكتاب للقراءة والمراجعة الجماعية.",
-    "drive_url": "https://drive.google.com/file/d/12779rCp5-pmALNwLGlw1la6adZ8KLsEE/view?usp=sharing"
-  },
-
-  
-  {
-    "id": "demo-computing-2026-09-01-01",
-    "book_id": "demo-computing",
-    "date": "2026-09-01",
-    "version": "v1.0",
-    "type": "release",
-    "title": "بداية السجل التجريبي",
-    "description": "حدث خيالي أقدم يوضح الاحتفاظ بتاريخ الإصدارات حتى بعد الانتقال إلى v2.0.",
-    "drive_url": ""
-  },
-  
+    "title": "نشر النسخة الأولى",
+    "description": "تم نشر النسخة الأولى من دليل مجموعة التأسيس المرح.",
+    "drive_url": "https://drive.google.com/file/d/15e6x6OJ8WvNp0KznDiuzoYg3Ox_zbvCE/view?usp=sharing"
+  }
 ]
