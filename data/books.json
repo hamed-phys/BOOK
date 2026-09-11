@@ -1,0 +1,50 @@
+[
+  {
+    "id": "demo-physics",
+    "title_ar": "مدخل تجريبي إلى الفيزياء",
+    "title_en": "A Demo Introduction to Physics",
+    "author": "مؤلف تجريبي",
+    "category": "فيزياء",
+    "cover": "assets/covers/placeholder.svg",
+    "status": "review",
+    "version": "v1.2",
+    "progress": 35,
+    "last_updated": "2026-09-08",
+    "description": "بيانات تجريبية توضح عرض كتاب في الفيزياء ومتابعة جولات مراجعته دون ربطها بكتاب أو ملف حقيقي.",
+    "drive_url": "",
+    "enabled": true,
+    "demo": true
+  },
+  {
+    "id": "demo-electronics",
+    "title_ar": "أساسيات إلكترونيات تجريبية",
+    "title_en": "Demo Electronics Foundations",
+    "author": "مؤلفة تجريبية",
+    "category": "إلكترونيات",
+    "cover": "assets/covers/placeholder.svg",
+    "status": "translation",
+    "version": "v1.1",
+    "progress": null,
+    "last_updated": "2026-09-09",
+    "description": "مثال خيالي لكتاب إلكترونيات يوضح أن نسبة المراجعة يمكن أن تكون غير معروفة وتُخفى عند استخدام null.",
+    "drive_url": "",
+    "enabled": true,
+    "demo": true
+  },
+  {
+    "id": "demo-computing",
+    "title_ar": "مفاهيم تجريبية في الحوسبة",
+    "title_en": "Demo Computing Concepts",
+    "author": "فريق تجريبي",
+    "category": "حوسبة",
+    "cover": "assets/covers/placeholder.svg",
+    "status": "correction",
+    "version": "v2.0",
+    "progress": 80,
+    "last_updated": "2026-09-07",
+    "description": "سجل خيالي في الحوسبة يوضح تعدد الإصدارات والحالات مع بقاء الملفات التاريخية مستقلة عن الإصدار الحالي.",
+    "drive_url": "",
+    "enabled": true,
+    "demo": true
+  }
+]

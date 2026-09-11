@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>أداة صيانة البيانات — مشروع القراءة والمراجعة الجماعية</title>
+  <meta name="description" content="أداة محلية داخل المتصفح لتعديل books.json و updates.json بأمان أكبر.">
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">تجاوز إلى المحتوى الرئيسي</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" data-site-path="index.html" href="../index.html">
+        <img src="../assets/favicon.svg" alt="" width="40" height="40">
+        <span>أداة صيانة البيانات</span>
+      </a>
+      <nav class="main-nav" aria-label="التنقل الرئيسي">
+        <a data-site-path="index.html" href="../index.html">العودة للموقع</a>
+        <a data-site-path="README.md" href="../README.md">README</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content" class="section">
+    <div class="container helper-layout">
+      <section class="helper-intro">
+        <p class="eyebrow">بدون تسجيل دخول أو API</p>
+        <h1>أداة الصيانة البسيطة</h1>
+        <p class="lead">تحمّل الأداة النسخ المنشورة أو تستورد نسختين محليتين، ثم تعدّل البيانات داخل ذاكرة المتصفح فقط. لا تحفظ إلى GitHub ولا ترفع PDF ولا تغيّر صلاحيات Google Drive.</p>
+        <div id="helper-status" class="helper-status" data-kind="info" aria-live="polite">جاري التحميل…</div>
+        <div class="button-row">
+          <button id="reload-published" class="button button-secondary" type="button">تحميل النسخ المنشورة من جديد</button>
+        </div>
+      </section>
+
+      <section class="panel" aria-labelledby="import-title">
+        <h2 id="import-title">أو استورد ملفين محليين معًا</h2>
+        <p>لا تستورد ملفًا واحدًا فقط. هذا يمنع بدء تعديل على بيانات ناقصة قد تمحو التاريخ.</p>
+        <div class="file-grid">
+          <label class="field"><span>books.json</span><input id="books-file" type="file" accept="application/json,.json"></label>
+          <label class="field"><span>updates.json</span><input id="updates-file" type="file" accept="application/json,.json"></label>
+        </div>
+        <button id="import-both" class="button button-secondary" type="button">استيراد الملفين</button>
+      </section>
+
+      <section class="panel" aria-labelledby="book-task-title">
+        <h2 id="book-task-title">1. إضافة كتاب أو تعديل كتاب</h2>
+        <form id="book-form">
+        <fieldset id="book-fieldset" disabled>
+          <legend class="sr-only">بيانات الكتاب</legend>
+          <div class="form-grid">
+            <label class="field"><span>المهمة</span><select id="book-mode"><option value="edit">تعديل كتاب موجود</option><option value="add">إضافة كتاب جديد</option></select></label>
+            <label id="book-select-wrap" class="field"><span>الكتاب</span><select id="book-select"></select></label>
+            <label class="field"><span>id</span><input id="book-id" required dir="ltr" pattern="[a-z0-9]+(?:-[a-z0-9]+)*"><small id="book-id-help"></small></label>
+            <label class="field"><span>العنوان العربي</span><input id="book-title-ar" required></label>
+            <label class="field"><span>العنوان الإنجليزي (اختياري)</span><input id="book-title-en" dir="ltr"></label>
+            <label class="field"><span>المؤلف</span><input id="book-author" required dir="auto"></label>
+            <label class="field"><span>التخصص</span><input id="book-category" required></label>
+            <label class="field"><span>مسار الغلاف</span><input id="book-cover" dir="ltr" placeholder="assets/covers/example.webp"></label>
+            <label class="field"><span>الحالة</span><select id="book-status"></select></label>
+            <label class="field"><span>الإصدار</span><input id="book-version" required dir="ltr" placeholder="v1.0"></label>
+            <label class="field"><span>نسبة المراجعة (اتركه فارغًا = null)</span><input id="book-progress" type="number" min="0" max="100" step="0.01" inputmode="decimal"></label>
+            <label class="field"><span>last_updated</span><input id="book-last-updated" type="date" required></label>
+            <label class="field field-wide"><span>الوصف</span><textarea id="book-description" rows="4" required></textarea></label>
+            <label class="field field-wide"><span>رابط Google Drive الحالي</span><input id="book-drive-url" type="url" dir="ltr" placeholder="https://drive.google.com/file/d/.../view"></label>
+            <label class="check-field"><input id="book-enabled" type="checkbox" checked><span>enabled — إظهار الكتاب في الكتالوج</span></label>
+            <label class="check-field"><input id="book-demo" type="checkbox"><span>demo — بيانات تجريبية</span></label>
+          </div>
+          <button class="button button-primary" type="submit">حفظ التعديل في الذاكرة</button>
+        </fieldset>
+        </form>
+      </section>
+
+      <section class="panel" aria-labelledby="update-task-title">
+        <h2 id="update-task-title">2. إضافة تحديث جديد</h2>
+        <form id="update-form">
+          <fieldset id="update-fieldset" disabled>
+            <legend class="sr-only">بيانات التحديث</legend>
+            <div class="form-grid">
+              <label class="field"><span>id</span><input id="update-id" required dir="ltr" pattern="[a-z0-9]+(?:-[a-z0-9]+)*" placeholder="book-id-2026-09-11-01"></label>
+              <label class="field"><span>الكتاب</span><select id="update-book-id"></select></label>
+              <label class="field"><span>التاريخ</span><input id="update-date" type="date" required></label>
+              <label class="field"><span>الإصدار (اختياري)</span><input id="update-version" dir="ltr" placeholder="v1.1"></label>
+              <label class="field"><span>النوع</span><select id="update-type"></select></label>
+              <label class="field"><span>العنوان</span><input id="update-title" required></label>
+              <label class="field field-wide"><span>الوصف</span><textarea id="update-description" rows="4" required></textarea></label>
+              <label class="field field-wide"><span>رابط الملف التاريخي لهذا الحدث (اختياري)</span><input id="update-drive-url" type="url" dir="ltr" placeholder="https://drive.google.com/file/d/.../view"></label>
+            </div>
+            <button class="button button-primary" type="submit">إضافة التحديث في بداية السجل</button>
+          </fieldset>
+        </form>
+      </section>
+
+      <section class="panel" aria-labelledby="validation-title">
+        <h2 id="validation-title">3. تحقق ثم نزّل الملفين</h2>
+        <p>المسار الآمن: حمّل أحدث نسختين ← عدّل ← تحقق ← نزّل الملفين ← ارفعهما معًا إلى مجلد <bdi dir="ltr">data</bdi> ← راجع الفرق ← Commit.</p>
+        <div class="button-row">
+          <button id="validate-all" class="button button-secondary" type="button" disabled>تحقق من الملفين</button>
+          <button id="download-books" class="button button-primary" type="button" disabled>تنزيل books.json</button>
+          <button id="download-updates" class="button button-primary" type="button" disabled>تنزيل updates.json</button>
+          <button id="refresh-output" class="button button-secondary" type="button" disabled>تحديث النص المعروض</button>
+        </div>
+        <div id="validation-errors" class="validation-box">لم تُحمّل البيانات بعد.</div>
+      </section>
+
+      <section class="panel output-panel" aria-labelledby="output-title">
+        <h2 id="output-title">4. JSON قابل للنسخ</h2>
+        <p>إذا فشل زر النسخ بسبب صلاحيات المتصفح، ستحدد الأداة النص تلقائيًا لتنسخه يدويًا.</p>
+        <div class="output-grid">
+          <div>
+            <div class="output-head"><strong>books.json</strong><button id="copy-books" class="text-button" type="button">نسخ</button></div>
+            <textarea id="books-output" class="json-output" readonly dir="ltr" spellcheck="false"></textarea>
+          </div>
+          <div>
+            <div class="output-head"><strong>updates.json</strong><button id="copy-updates" class="text-button" type="button">نسخ</button></div>
+            <textarea id="updates-output" class="json-output" readonly dir="ltr" spellcheck="false"></textarea>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel callout" aria-labelledby="helper-limit-title">
+        <h2 id="helper-limit-title">ما الذي لا تفعله الأداة؟</h2>
+        <p>لا تحفظ شيئًا إلى GitHub، ولا ترفع PDF، ولا تغيّر مشاركة Drive، ولا تحتاج كلمة مرور أو رمز API. التغييرات غير المنزلة تضيع عند تحديث الصفحة.</p>
+      </section>
+    </div>
+  </main>
+  <noscript><div class="noscript">تحتاج أداة الصيانة إلى JavaScript.</div></noscript>
+  <script type="module" src="update-helper.js"></script>
+</body>
+</html>
